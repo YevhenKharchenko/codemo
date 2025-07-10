@@ -2,15 +2,21 @@ const contextMenu = document.querySelector('.context-menu');
 const menuBtn = document.querySelector('.nav-btn');
 const closeContextBtn = document.querySelector('.close-btn');
 
+const menu = document.querySelector('.menu');
+const contextMenuBtn = document.querySelector('.menu-btn');
+
 menuBtn.addEventListener('click', onMenuButtonClick);
+contextMenuBtn.addEventListener('click', onContextMenuButtonClick);
 
 let contextMenuIsOpen = false;
+let menuIsOpen = false;
 
 function onMenuButtonClick() {
   if (contextMenuIsOpen) return;
 
   contextMenuIsOpen = true;
   contextMenu.classList.add('is-open');
+  menuBtn.classList.add('closed');
   closeContextBtn.classList.add('is-open');
 
   contextMenu.addEventListener('click', onContextMenuLinkClick);
@@ -18,9 +24,26 @@ function onMenuButtonClick() {
   document.addEventListener('click', onOutsideMenuClick);
 }
 
+function onContextMenuButtonClick() {
+  if (!menuIsOpen) {
+    menuIsOpen = true;
+    menu.classList.add('menu-is-open');
+
+    menu.addEventListener('click', onContextMenuLinkClick);
+    document.addEventListener('click', onOutsideMenuClick);
+  } else {
+    menuIsOpen = false;
+    menu.classList.remove('menu-is-open');
+
+    menu.removeEventListener('click', onContextMenuLinkClick);
+    document.removeEventListener('click', onOutsideMenuClick);
+  }
+}
+
 function onCloseContextButtonClick() {
   contextMenuIsOpen = false;
   contextMenu.classList.remove('is-open');
+  closeContextBtn.classList.remove('is-open');
   menuBtn.classList.remove('closed');
 
   contextMenu.removeEventListener('click', onContextMenuLinkClick);
@@ -28,9 +51,24 @@ function onCloseContextButtonClick() {
   document.removeEventListener('click', onOutsideMenuClick);
 }
 
+function onMenuLinkClick(e) {
+  if (e.target.nodeName === 'A') {
+    onContextMenuButtonClick();
+  }
+}
+
 function onContextMenuLinkClick(e) {
   if (e.target.nodeName === 'A') {
     onCloseContextButtonClick();
+  }
+}
+
+function onOutsideContextMenuClick(e) {
+  const isClickInsideMenu = menu.contains(e.target);
+  const isClickOnMenuBtn = contextMenuBtn.contains(e.target);
+
+  if (!isClickInsideMenu && !isClickOnMenuBtn) {
+    onContextMenuButtonClick();
   }
 }
 

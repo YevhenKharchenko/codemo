@@ -1,75 +1,62 @@
 .context-menu {
-  box-shadow: -6px 8px 4px 0 rgba(16, 0, 78, 0.25);
-  background: linear-gradient(180deg, #0f8 0%, #00c96b 100%);
-  padding: 12px 20px 16px 28px;
-  max-width: 264px;
+  display: none;
+  background: #0a1b2f;
+  border-top: 10px solid #00fff7;
+  border-right: 6px solid #00fff7;
+  border-bottom: 4px solid #00fff7;
+  border-left: 2px solid #00fff7;
+  padding: 52px 34px;
+  max-width: 375px;
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  top: 0;
+  top: 70px;
+  left: 0;
   right: 0;
+  transform: none;
   z-index: 10;
-  height: 100%;
-  max-height: 472px;
-  overflow-y: auto;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-  visibility: hidden;
-}
-
-.close-btn {
-  display: none;
-  background-color: transparent;
-  width: 32px;
-  height: 32px;
-  margin-left: auto;
-  margin-bottom: 52px;
-
-  @include media(desktop) {
-    display: none;
-  }
-}
-
-.context-nav {
+  max-height: 694px;
+  overflow-y: scroll;
 }
 
 .context-nav-list {
   display: flex;
   flex-direction: column;
-  align-items: start;
   gap: 32px;
+  text-align: left;
 }
 
 .context-list-link {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
-  color: #1e1e1e;
+  font-family: 'Wallpoet', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #f2f2f2;
   transition: all 0.3s ease-in-out;
 
   &:active {
+    color: #00fff7;
   }
 }
 
 .is-open {
-  display: block;
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
+  display: flex;
 
   @include media(desktop) {
     display: none;
   }
 }
 
+.menu-is-open {
+  display: none;
+
+  @include media(desktop) {
+    display: flex;
+  }
+}
+
 .closed {
   display: none;
-  transform: translateX(100%);
-  opacity: 0;
-  visibility: hidden;
 }
 
 .screen-freeze {
