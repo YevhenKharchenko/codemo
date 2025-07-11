@@ -1,3 +1,7 @@
+.privacy-body {
+  background: #fff;
+}
+
 .policy-section {
   padding-top: 76px;
   padding-bottom: 32px;
@@ -8,13 +12,29 @@
   }
 }
 
+.policy-main-title {
+  font-family: 'Wallpoet', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.14286;
+  text-transform: uppercase;
+  color: #101010;
+  margin-bottom: 18px;
+
+  @include media(desktop) {
+    font-size: 48px;
+    margin-bottom: 36px;
+  }
+}
+
 .policy-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 1.5;
-  color: #fff;
-  margin-bottom: 24px;
+  font-family: 'Wallpoet', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #101010;
+  margin-bottom: 1em;
 
   @include media(desktop) {
     font-size: 48px;
@@ -23,11 +43,12 @@
 }
 
 .policy-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.5;
-  color: #fff;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22222;
+  letter-spacing: 0.02em;
+  color: #101010;
   margin-bottom: 1em;
 
   @include media(desktop) {
@@ -38,9 +59,8 @@
 .policy-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #fff;
+  font-size: 16px;
+  color: #101010;
 
   &:not(:last-child) {
     margin-bottom: 1em;
