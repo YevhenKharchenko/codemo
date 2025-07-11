@@ -29,14 +29,14 @@ function onContextMenuButtonClick() {
     menuIsOpen = true;
     menu.classList.add('menu-is-open');
 
-    menu.addEventListener('click', onContextMenuLinkClick);
-    document.addEventListener('click', onOutsideMenuClick);
+    menu.addEventListener('click', onMenuLinkClick);
+    document.addEventListener('click', onOutsideContextMenuClick);
   } else {
     menuIsOpen = false;
     menu.classList.remove('menu-is-open');
 
-    menu.removeEventListener('click', onContextMenuLinkClick);
-    document.removeEventListener('click', onOutsideMenuClick);
+    menu.removeEventListener('click', onMenuLinkClick);
+    document.removeEventListener('click', onOutsideContextMenuClick);
   }
 }
 

@@ -22,8 +22,8 @@
   margin-bottom: 18px;
 
   @include media(desktop) {
-    font-size: 48px;
-    margin-bottom: 36px;
+    font-size: 44px;
+    line-height: 1.09091;
   }
 }
 
@@ -34,11 +34,10 @@
   line-height: 1.2;
   text-transform: uppercase;
   color: #101010;
-  margin-bottom: 1em;
+  margin-bottom: 18px;
 
   @include media(desktop) {
-    font-size: 48px;
-    margin-bottom: 36px;
+    font-size: 32px;
   }
 }
 
@@ -49,10 +48,11 @@
   line-height: 1.22222;
   letter-spacing: 0.02em;
   color: #101010;
-  margin-bottom: 1em;
+  margin-bottom: 18px;
 
   @include media(desktop) {
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 1.08333;
   }
 }
 
@@ -63,26 +63,38 @@
   color: #101010;
 
   &:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: 18px;
   }
 
   @include media(desktop) {
-    font-size: 18px;
   }
+}
+
+.policy-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.policy-item {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #101010;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 18px;
+  }
+
+  @include media(desktop) {
+  }
+}
+
+.policy-span {
+  text-decoration: underline;
 }
 
 .policy-link {
   text-decoration: underline;
-  text-decoration-skip-ink: none;
   word-wrap: break-word;
-}
-
-.support-link {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  word-wrap: break-word;
-}
-
-.policy-span {
-  font-weight: 500;
 }
