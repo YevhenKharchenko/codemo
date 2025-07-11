@@ -11,7 +11,7 @@
   margin: 0 auto;
   position: fixed;
   top: 107px;
-  right: 80px;
+  right: calc((100vw - 1440px) / 2 + 80px);
   transform: none;
   z-index: 10;
 }

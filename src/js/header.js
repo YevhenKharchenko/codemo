@@ -112,3 +112,15 @@ const observer = new IntersectionObserver(entries => {
 }, observerOptions);
 
 sections.forEach(section => observer.observe(section));
+
+function updateMenuPosition() {
+  const vw = document.documentElement.clientWidth;
+  const offset = (vw - 1440) / 2 + 80;
+  const menu = document.querySelector('.menu');
+  if (menu) {
+    menu.style.right = `${offset}px`;
+  }
+}
+
+window.addEventListener('resize', updateMenuPosition);
+window.addEventListener('DOMContentLoaded', updateMenuPosition);
