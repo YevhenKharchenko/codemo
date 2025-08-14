@@ -61,16 +61,16 @@
 }
 
 .logs-list-item {
-  background-image: url(../img/logs/logs-line-mob.png),
-    url(../img/logs/logs-line-mob.png);
+  background-image: url(../img/logs-img/logs-line-mob.png),
+    url(../img/logs-img/logs-line-mob.png);
   background-repeat: no-repeat, no-repeat;
   background-position: top center, bottom center;
   background-size: auto;
   padding: 32px 16px;
 
   @include media(desktop) {
-    background-image: url(../img/logs/logs-line-desk.png),
-      url(../img/logs/logs-line-desk.png);
+    background-image: url(../img/logs-img/logs-line-desk.png),
+      url(../img/logs-img/logs-line-desk.png);
     background-repeat: no-repeat, no-repeat;
     background-position: top center, bottom center;
     background-size: auto;
